@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   note-dev-api:
     build:
@@ -5,9 +7,6 @@ services:
       dockerfile: Dockerfile.dev
     ports:
       - '3000:3000'
-    environment:
-      - PORT=3000
-      - NODE_ENV=development
     volumes:
       - ./src:/app/src
       - ./node_modules:/app/node_modules
@@ -20,7 +19,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=note-dev
-      - MYSQL_USER=root
+      - MYSQL_USER=rootuser
       - MYSQL_PASSWORD=password
       - MYSQL_TCP_PORT=3307
     networks:
